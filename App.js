@@ -3,12 +3,10 @@ import { useVideoPlayer, VideoView } from "expo-video";
 
 const { width } = Dimensions.get("window");
 
-const localSource = require("./assets/video.mp4");
-const remoteSource =
-  "https://videos.pexels.com/video-files/1580455/1580455-hd_1920_1080_30fps.mp4";
+const source = require("./assets/video.mp4");
 
 export default function App() {
-  const player = useVideoPlayer(localSource, (player) => {
+  const player = useVideoPlayer(source, (player) => {
     player.loop = true;
     player.staysActiveInBackground = true;
     player.play();
