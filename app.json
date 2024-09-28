@@ -3,6 +3,14 @@
     "name": "my-video-app",
     "slug": "my-video-app",
     "version": "1.0.0",
-    "plugins": ["expo-video"]
+    "plugins": [
+      "expo-video"
+    ],
+    "android": {
+      "package": "com.kacperkapusciak.myvideoapp"
+    },
+    "ios": {
+      "bundleIdentifier": "com.kacperkapusciak.myvideoapp"
+    }
   }
 }
