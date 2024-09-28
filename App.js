@@ -1,8 +1,6 @@
 import { StyleSheet, View, Dimensions, Button } from "react-native";
 import { useVideoPlayer, VideoView } from "expo-video";
 
-const { width } = Dimensions.get("window");
-
 const source = require("./assets/video.mp4");
 
 export default function App() {
@@ -17,8 +15,8 @@ export default function App() {
       <VideoView
         player={player}
         style={{
-          width: width,
-          height: width * (9 / 16),
+          width: Dimensions.get("window").width,
+          height: Dimensions.get("window").width * (9 / 16),
         }}
         allowsFullscreen
         allowsPictureInPicture
