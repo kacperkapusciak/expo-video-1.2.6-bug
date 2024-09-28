@@ -13,7 +13,7 @@ function Root() {
       }}
     >
       <App />
-      <StatusBar style="light" translucent={false} />
+      <StatusBar style="light" translucent={false} backgroundColor="#020617" />
     </SafeAreaView>
   );
 }
