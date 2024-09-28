@@ -1,22 +1,18 @@
-import { useVideoPlayer, VideoView } from "expo-video";
 import { useRef } from "react";
-import {
-  StyleSheet,
-  View,
-  Dimensions,
-  SafeAreaView,
-  Button,
-} from "react-native";
+import { StyleSheet, View, Dimensions, Button } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useVideoPlayer, VideoView } from "expo-video";
 
-const width = Dimensions.get("screen").width;
+const width = Dimensions.get("window").width;
 
 const localSource = require("./assets/video.mp4");
 const remoteSource =
   "https://videos.pexels.com/video-files/1580455/1580455-hd_1920_1080_30fps.mp4";
 
-export default function VideoScreen() {
+export default function App() {
   const ref = useRef(null);
-  const player = useVideoPlayer(remoteSource, (player) => {
+  const player = useVideoPlayer(localSource, (player) => {
     player.loop = true;
     player.play();
   });
@@ -44,6 +40,7 @@ export default function VideoScreen() {
           }}
         />
       </View>
+      <StatusBar style="light" />
     </SafeAreaView>
   );
 }
